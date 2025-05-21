@@ -1,0 +1,242 @@
+
+body { 
+    background-color: lavender;
+}
+
+h1 {
+    padding-top: 10px;
+    color: purple;
+    font-family: 'Brush Script MT', cursive;
+    text-align: center;
+    font-size: 40px;
+}
+
+p {
+    color:purple;
+    font-family: Geneva;
+    font-size: small;
+    padding: 80px;
+    line-height: 0.8cm;
+}
+
+
+a#rotator {
+    position: relative; /* Add positioning */
+    display: block; /* Better for animation control */
+    animation: coffeeanimation 6s infinite;
+}
+
+a#rotator img {
+    width: 15%;
+    transition: all 3s ease-in-out;
+    border-radius: 500px;
+}
+
+/* Animation */ 
+
+@keyframes coffeeanimation{
+    0% {
+        left: 0;
+        opacity: 0.8;
+    }
+    100% {
+        left: calc(100vw - 200px); 
+        opacity: 1;
+    } 
+}
+
+.coffee{
+    width: 15%;
+    justify-content: left;
+}
+
+.miffy{
+    width: 8%;
+}
+
+.miffy-container{
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding:10px; */
+    position:relative;
+    /* border-color: green; */
+    /* border-style: solid;
+    border-width: 2px; */
+}
+
+.roadmap-bg{
+    width: 100%;
+    height: auto; 
+    display:block;
+}
+
+.roadmap-wrapper{
+    position: relative; /* serves as reference point for all absolutely positioned .slide elements inside it */
+    /* KEY: makes all .slide top/left values relative to this box */
+    width: 100%;
+    margin: auto;
+}
+
+/* slide calculated relative to nearest positioned ancestor, the closest parents with a position value that its not "static" */
+/* if no parent has position:relative, then the child element will be positioned relative to the entire body */
+.slide {
+    position: absolute;
+    width: 10%; 
+    height: auto;
+
+}
+
+/* Use percentage positioning relative to the wrapper */
+/* .slide1 { top: 19%; left: 8%; }  */
+/* relative to .roadmap-wrapper, not whole page */
+/* .slide2 { top: 65%; left: 30%; }
+.slide3 { top: 5%; left: 45%; }
+.slide4 { top: 35%; left: 60%; }
+.slide5 { top: 20%; left: 85%; } */
+/* The .slide images follow the exact curve of your roadmap background image.
+Layout stays consistent across screen sizes. */
+
+
+
+/* position absolute positions wrapper in relation to roadmap wrapper */
+.slide-wrapper {
+position: absolute;
+width: 12%; /* needs to match with width in slide above */
+display: flex; /*need a flex parent to align children items */
+flex-direction:column;
+align-items: center; /* Centers children horizontally */
+}
+
+/* parent doesn't have text-align, so slide-wrapper doesn't inherit from raodmap-wrapper 8/
+
+/* positions slide1 wrapper along the roadmap image */
+.slide1-wrapper {
+top: 19%;
+left: 8%;
+}
+
+/* positions slide1 wrapper along the roadmap image */
+.slide2-wrapper {
+    top: 50%;
+    left: 28%;
+    }
+
+.slide3-wrapper {
+    top: 5%;
+    left: 45%;
+    }
+
+.slide4-wrapper {
+    top: 35%;
+    left: 65%;
+    }
+
+
+.slide5-wrapper {
+    top: 20%;
+    left: 85%;
+    }
+/* targets the image inside the slide-wrapper */
+/* image fills 100% of the wrapper's wifth */
+
+.slide-wrapper img.slide {
+width: 100%;
+height: auto;
+/* text-align:center; */
+border-radius: 10px; /* rounds the corners for a soft look */
+box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+
+  /* Button styles */
+.slide-wrapper .reveal-btn {
+    margin-top: 200px;
+    /* margin-left: 10px; */
+    padding: 10px 14px;
+    font-size: 16px;
+    font-family:'Courier New', Courier, monospace;
+    background-color: purple;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer; /* hand on hover */
+  } 
+
+  /* the hidden info box that appears after the info button is clicked */
+.slide-wrapper .text-box {
+    color: #CCCCFF;
+    display: none; /* hide by default */
+    /* margin-top: 10px; */
+    /* margin-left: 10px; */
+    font-family:'Courier New', Courier, monospace;
+    background-color: #164924;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    font-size: 16px;
+
+  }
+  
+  /* when the box gets active class it becomes visible */
+  .slide-wrapper .text-box.active {
+    display: block;
+  }
+
+  /* a global style for buttons with this class */
+  /* .reveal-btn {
+    margin-bottom: 10px;
+    padding: 8px 16px;
+    border: none;
+    background-color: #ff8fab;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  } */
+  
+  .reveal-btn:hover {
+    background-color: rgba(250, 100, 50, 1);
+  }
+
+  
+.text-box{
+    color: white;
+    display:none; /*Hide by default*/
+    margin-top: 50px;
+    padding: 10px;
+    background-color: purple;
+    border:1px solid #ddd;
+    border-radius: 8px;
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    transition: all 0.3s ease-in-out;
+}
+
+.text-box.active{
+    display:block; /*show when active */
+}
+
+
+    
+.star{
+    position:absolute;
+    width: 10%;
+}
+
+.star-1{
+    left: 200px;
+    top: 200px;
+    width: 10%;
+}
+
+.star-2{
+    left: 5px;
+    top: 550px;
+    width: 10%;
+}
+
+.star-3{
+    left: 500px;
+    top: 350px;
+    width: 10%;
+}

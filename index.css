@@ -1,0 +1,160 @@
+body { 
+    background-color: lavender;
+}
+
+p {
+    color:purple;
+    font-family: Geneva;
+    font-size: small;
+    padding: 80;
+    line-height: 0.8cm;
+}
+
+b {
+    font-weight: bold;
+    color: forestgreen;
+}
+
+h1 {
+    padding-top: 10px;
+    color: purple;
+    font-family: Geneva;
+    text-align: center;
+    font-size: 25px;
+}
+
+.header-container{
+    display:flex; /* places the apple and header in a row */
+    justify-content: center;
+    align-items: center;
+    gap: 30px; /*space between elements */
+    margin: 20px 0px;
+    border-color: red;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.apple{
+    width: 100px;
+    height: auto;
+    animation: dance 1.5s infinite;
+}
+
+
+@keyframes dance {
+    0% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
+    100% {
+        transform: rotate(-20deg);
+    }
+    
+}
+.intro-text {
+    border:80px;
+    padding: 20px;
+    line-height: 2.5em;
+}
+
+.button-container{ 
+    text-align:center;
+    margin: 20px; /* space outside, between eleemnt and surroundigns */
+    padding: 20px; /* space inside an eleemnt between content and its borders */
+    border-color: red;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.spaced-link {
+    display:inline-block;
+    /* element can sit next to other elements */
+    margin-right: 20px;
+    margin-left: 20px; /*equal spacing */
+    padding: 8px 8px; /* vertical only */
+    color: purple;
+    border: 1px solid;
+    border-radius: 10px;
+    font-family: Geneva;
+    font-size: 12px;
+    transition: all 0.3s ease;
+    width: 60px; /* fixed width for all buttons */
+    height: auto; /* natural adjustment */
+    line-height: 20px;
+    text-decoration: none; /* Important for links to remove underline */
+    text-align: center; /* centers within each button */ 
+}
+
+.spaced-link:hover{
+    background: purple;
+    color:lightcoral;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.grid-container {
+    display:grid;
+    grid-template-columns: 1fr 1fr; /* Creates 2 columns of equal width */
+    grid-template-rows: 1fr 1fr; /* Creates 2 rows of equal height */
+    gap: 50px;    /* Adds space between grid items */
+    width: 90%;  /* Container takes full width */
+    max-width: 800px;    /* Optional: limit maximum width */
+    margin: 20px auto;   /* Optional: center the grid */
+    aspect-ratio: 1/1;    /* Makes the container square */
+    border-color: green;
+    border-style: solid;
+    border-width: 2px;
+}
+
+.grid-item {
+    position:relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100%; /* aspect ratio set above requires items to be square */
+    border-radius: 10px;
+}
+
+.grid-item img {
+    opacity: 1;
+    display:block;
+    width: 100%;
+    height: 100%;
+    object-fit:cover;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity:0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%,-50%)
+}
+
+.hover-text{
+    color:purple;
+    font-size: 16px;
+    font-family: Geneva;
+    text-align: center;
+}
+
+.grid-item:hover img {
+    opacity: 0.3;
+}
+
+.grid-item:hover .middle{
+    opacity: 1;
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+      grid-template-columns: 1fr;   /* Changes to 1 column on smaller screens */
+      grid-template-rows: repeat(4, 1fr); /* Creates 4 rows instead */
+    }
+  }
+
