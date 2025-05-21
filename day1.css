@@ -199,22 +199,6 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     background-color: rgba(250, 100, 50, 1);
   }
 
-  
-.text-box{
-    color: white;
-    display:none; /*Hide by default*/
-    margin-top: 50px;
-    padding: 10px;
-    background-color: purple;
-    border:1px solid #ddd;
-    border-radius: 8px;
-    font-family:Georgia, 'Times New Roman', Times, serif;
-    transition: all 0.3s ease-in-out;
-}
-
-.text-box.active{
-    display:block; /*show when active */
-}
 
 
     
@@ -237,6 +221,6 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 
 .star-3{
     left: 500px;
-    top: 350px;
+    top: 450px;
     width: 10%;
 }

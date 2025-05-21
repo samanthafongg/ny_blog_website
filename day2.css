@@ -1,0 +1,197 @@
+body { 
+    background-color: lavender;
+    font-family:Geneva;
+}
+
+h1 {
+    padding-top: 10px;
+    color: purple;
+    font-family: 'Brush Script MT', cursive;
+    text-align: center;
+    font-size: 40px;
+}
+
+p {
+    color:purple;
+    font-family: cursive;
+    font-size: 20px;
+    /* padding: 20px; */
+    line-height: 0.8cm;
+    padding-left:15px;
+}
+
+.centered{
+    text-align:center;
+}
+
+.smalltext{
+    font-size: 12px;
+}
+
+
+.drink{
+    width: 200px;
+    height: auto;
+    animation: dance 1.5s infinite;
+}
+
+/* @keyframes dance {
+    0% {
+        transform: rotate(-20deg);
+    }
+    50% {
+        transform: rotate(20deg);
+    }
+    100% {
+        transform: rotate(-20deg);
+    }
+    
+} */
+
+#text-container {
+    top:20px;
+    width: 100%;
+    text-align:center;
+    color: #999;
+    text-transform: uppercase;
+    font-size: 36px;
+    font-weight:bold;
+    height:100px;
+    /* z-index:10; */
+    /* padding-top: 100px; */
+    /* bottom: 5%; */
+    /* display:block; */
+}
+
+#flip {
+    height:60px;
+    overflow:hidden;
+    font-family:Geneva;
+    justify-content: center;
+    margin-bottom: 45px;
+}
+
+#flip > div > div {
+    color: #fff;
+    padding: 4px 12px;
+    height: 45px;
+    margin-bottom: 45px;
+    display: inline-block;
+}
+
+#flip div:first-child{
+    animation: show 5s linear infinite;
+}
+
+#flip div div{
+    background: pink;
+}
+
+#flip div:first-child div{
+    background:goldenrod;
+}
+
+#flip div:last-child div{
+    background:forestgreen;
+}
+
+@keyframes show{
+    0% {margin-top:-270px;}
+    5% {margin-top:-180px;}
+    33% {margin-top:-180px;}
+    38% {margin-top:-90px;}
+    66% {margin-top:-90px;}
+    71% {margin-top:0px;}
+    99.99% {margin-top:0px;}
+    100% {margin-top:-270px;}
+}
+
+
+.comedy{
+    /* position:absolute; */
+    margin: 20px;
+    align-items: center;
+    width: 40%;
+    height: auto;
+    border-radius: 10px;
+    /* display:flex; */
+   }
+   
+   .header-container{
+       display:flex; /* places the hojicha and header in a row */
+       justify-content: center;
+       align-items: center;
+       margin-top: 50px;
+       /* gap: 10px; space between elements */
+       /* margin: 10px 0px; */
+       border-color: purple;
+       border-style: solid;
+       border-width: 2px;
+   }
+   
+   .digi{
+    width:80%;
+   }
+
+
+   .slide-wrapper {
+    position: absolute;
+    width: 40%; /* needs to match with width in slide above */
+    display: flex; /*need a flex parent to align children items */
+    flex-direction:column;
+    align-items: center; /* Centers children horizontally */
+    }
+
+
+     /* Button styles */
+.slide-wrapper .reveal-btn {
+    /* margin-top: 200px; */
+    /* margin-left: 10px; */
+    padding: 10px 14px;
+    font-size: 14px;
+    font-family:'Courier New', Courier, monospace;
+    background-color: darkolivegreen;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer; /* hand on hover */
+  } 
+
+
+.slide-wrapper .text-box {
+    color: #CCCCFF;
+    display: none; /* hide by default */
+    /* margin-top: 10px; */
+    /* margin-left: 10px; */
+    font-family:'Courier New', Courier, monospace;
+    background-color: #164924;
+    color: white;
+    padding: 8px;
+    border-radius: 8px;
+    font-size: 14px;
+  }
+
+
+.slide-wrapper .text-box.active {
+    display: block;
+  }
+
+.reveal-btn:hover {
+background-color: rgba(250, 100, 50, 1);
+}
+ 
+.text-box{
+    color: white;
+    display:none; /*Hide by default*/
+    margin-top: 20px;
+    padding: 10px;
+    background-color: purple;
+    border:1px solid #ddd;
+    border-radius: 8px;
+    font-family:'Courier New', Courier, monospace;
+    transition: all 0.3s ease-in-out;
+}
+
+.text-box.active{
+    display:block; /*show when active */
+}

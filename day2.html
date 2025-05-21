@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day 2 in New York</title>
+    <link rel="stylesheet" href="day2.css">
+
+</head>
+<body>
+    <h1>･ ༝ ･ ⋆ ˚｡⋆୨୧˚Brooklyn & Barhopping ⋆ ˚｡⋆୨୧ ･ ༝ ･ </h1>
+    
+    <div id="text-container">
+        <p class="centered">I Love</p>
+        <div id="flip">
+            <div><div>Brooklyn</div></div>
+            <div><div>Matcha</div></div>
+            <div><div>Comedy</div></div>
+        </div>
+    </div>
+
+    <!-- <div class = "header-container">
+        <img src = "images/drink.png" class = drink alt = "drink">
+        <img src="images/comedy.png" class="comedy" alt="Center Image">
+        <img src = "images/drink.png" class = drink alt = "drink">
+        </div>
+     -->
+
+        <div class="slide-wrapper"> 
+        <p> first stop: chef katsu in brooklyn</p>
+        <img src="images/digikatsu.png" alt="Digi" class="digi">
+        <button class="reveal-btn">click here for blog!🌸</button>
+        <div class ="text-box"> chef katsu is a small japanese eatery nested in the heart of brooklyn. i ordered the pork katsu cutlet with their pumpkin soup and a strawberry hojicha drink.this was a delicious and balanced meal, and i would definitely go again! </div>
+        </div>
+
+    <script>
+        document.querySelectorAll(".reveal-btn").forEach(button=> {
+            button.addEventListener('click', () => {
+                const textBox=button.nextElementSibling;
+                textBox.classList.toggle('active')
+            });
+        });
+    </script>
+
+
+</body>
+</html>
+
