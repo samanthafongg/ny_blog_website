@@ -205,3 +205,43 @@ background-color: rgba(250, 100, 50, 1);
     display:block; /*show when active */
 }
 
+
+
+@media (max-width: 1024px) {
+    .slide-item {
+        width: calc(50% - 40px);
+    }
+}
+
+@media (max-width: 768px) {
+    .slide-item {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    p {
+        font-size: 1.1rem;
+        padding-left: 10px;
+    }
+
+    .comedy {
+        width: 80%;
+    }
+
+    .header-container {
+        flex-direction: column;
+    }
+
+    .text-box {
+        font-size: 0.9rem;
+    }
+
+    .reveal-btn {
+        font-size: 0.9rem;
+        padding: 8px 12px;
+    }
+}

@@ -224,3 +224,15 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     top: 450px;
     width: 10%;
 }
+
+@media (max-width: 768px) {
+    .reveal-btn {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+    }
+  
+    .text-box {
+      font-size: 0.9rem;
+    }
+  }
+  

@@ -37,59 +37,9 @@
 
     }
   
-  .rain {
-    position: fixed;
-    top:0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 2;
-    pointer-events: none; /* Makes sure users can still interact with elements underneath */
-
-  }
+ 
   
-  .drop {
-    position: absolute;
-    bottom: 100%;
-    width: 15px;
-    height: 120px;
-    pointer-events: none;
-    animation: drop 0.5s linear infinite;
-  }
-  
-  @keyframes drop {
-    0% { transform: translateY(0vh); }
-    75% { transform: translateY(90vh); }
-    100% { transform: translateY(90vh); }
-  }
-  
-  .stem {
-    width: 1px;
-    height: 60%;
-    margin-left: 7px;
-    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.25));
-    animation: stem 0.5s linear infinite;
-  }
-  
-  .splat {
-    width: 15px;
-    height: 10px;
-    border-top: 2px dotted rgba(255,255,255,0.5);
-    border-radius: 50%;
-    opacity: 1;
-    transform: scale(0);
-    animation: splat 0.5s linear infinite;
-    display: block; /* Always show splat */
-  }
-  
-  @keyframes splat {
-    0% { opacity: 1; transform: scale(0); }
-    80% { opacity: 1; transform: scale(0); }
-    90% { opacity: 0.5; transform: scale(1); }
-    100% { opacity: 0; transform: scale(1.5); }
-  }
-
-  /* flip card */
+  /*flip card */
 
   
 
@@ -156,9 +106,11 @@
   }
   
   .flip-card {
-    width: 700px;
-    height: 400px;
+    width: 100%;
+    max-width: 700px;
+    aspect-ratio: 16 / 9;
   }
+  
   
   .flip-inner {
     width: 100%;
@@ -188,4 +140,61 @@
   .flip-back {
     transform: rotateY(180deg);
   }
+
+
+  /* Mobile styles */
+@media (max-width: 768px) {
+    h1 {
+      font-size: 28px;
+    }
+  
+    p {
+      font-size: 12px;
+      padding: 20px;
+      line-height: 1.4em;
+    }
+  
+    .cursive {
+      font-size: 18px;
+    }
+  
+    .img {
+      width: 40%;
+    }
+  
+    .img-container {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .flip-wrapper {
+      flex-direction: column;
+      margin: 20px;
+      gap: 20px;
+    }
+  
+    .flip-card {
+      width: 90%;
+      height: auto;
+      aspect-ratio: 16 / 9;
+    }
+  
+    .flip-front img, .flip-back img {
+      object-fit: contain;
+    }
+  
+    .rain {
+      height: 100vh;
+    }
+  
+    .drop {
+      width: 10px;
+      height: 100px;
+    }
+  
+    .text {
+      font-size: 12px;
+    }
+  }
+  
   
