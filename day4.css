@@ -29,12 +29,12 @@
     }
 
     .img{
-        width: 17%;
+        width: 25%;
     }
 
     .img-container{
         display:flex;
-
+        justify-content: center;
     }
   
   .rain {
