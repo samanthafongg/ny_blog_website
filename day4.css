@@ -7,12 +7,19 @@
     font-size: 40px;
   }
 
+  body {
+    background-color: rgb(7, 7, 61);
+    font-family: Geneva;
+    margin: 0;
+    /* overflow: hidden; */
+  }
     p {
         color:lightcyan;
         font-family: Geneva;
-        padding-left: 30px;
-        padding-right: 30px;
-        font-size: 16px;
+        /* padding-left: 30px;
+        padding-right: 30px; */
+        font-size: 14px;
+        padding: 30px;
         line-height: 0.8cm;
     }
 
@@ -21,13 +28,14 @@
         font-size: 25px;
     }
 
+    .img{
+        width: 17%;
+    }
 
     .img-container{
         display:flex;
-        
-    }
 
-    
+    }
   
   .rain {
     position: fixed;
@@ -85,34 +93,8 @@
 
   
 
-  body {
-    background-color: navy;
-    font-family: Geneva;
-    margin: 0;
-    /* overflow: hidden; */
-  }
-  
-  h1 {
-    padding-top: 10px;
-    color: gray;
-    font-family: 'Brush Script MT', cursive;
-    text-align: center;
-    font-size: 40px;
-  }
 
-    p {
-        color:lightcyan;
-        font-family: Geneva;
-        padding-left: 30px;
-        padding-right: 30px;
-        font-size: small;
-        line-height: 0.8cm;
-    }
 
-    .img{
-        width:100%;
-    }
-  
   .rain {
     position: absolute;
     left: 0;
