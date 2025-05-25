@@ -1,21 +1,209 @@
-body { 
-    background-color: lavender;
-    font-family:Geneva;
-}
 
-h1 {
+  h1 {
     padding-top: 10px;
-    color: purple;
+    color: lightcyan;
     font-family: 'Brush Script MT', cursive;
     text-align: center;
     font-size: 40px;
-}
+  }
 
-p {
-    color:purple;
-    font-family: cursive;
-    font-size: 20px;
-    line-height: 0.8cm;
-    padding-left:15px;
-    /* align-items: center; */
-}
+    p {
+        color:lightcyan;
+        font-family: Geneva;
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: 16px;
+        line-height: 0.8cm;
+    }
+
+    .cursive{
+        font-family:cursive;
+        font-size: 25px;
+    }
+
+
+    .img-container{
+        display:flex;
+        
+    }
+
+    
+  
+  .rain {
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    z-index: 2;
+    pointer-events: none; /* Makes sure users can still interact with elements underneath */
+
+  }
+  
+  .drop {
+    position: absolute;
+    bottom: 100%;
+    width: 15px;
+    height: 120px;
+    pointer-events: none;
+    animation: drop 0.5s linear infinite;
+  }
+  
+  @keyframes drop {
+    0% { transform: translateY(0vh); }
+    75% { transform: translateY(90vh); }
+    100% { transform: translateY(90vh); }
+  }
+  
+  .stem {
+    width: 1px;
+    height: 60%;
+    margin-left: 7px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.25));
+    animation: stem 0.5s linear infinite;
+  }
+  
+  .splat {
+    width: 15px;
+    height: 10px;
+    border-top: 2px dotted rgba(255,255,255,0.5);
+    border-radius: 50%;
+    opacity: 1;
+    transform: scale(0);
+    animation: splat 0.5s linear infinite;
+    display: block; /* Always show splat */
+  }
+  
+  @keyframes splat {
+    0% { opacity: 1; transform: scale(0); }
+    80% { opacity: 1; transform: scale(0); }
+    90% { opacity: 0.5; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.5); }
+  }
+
+  /* flip card */
+
+  
+
+  body {
+    background-color: navy;
+    font-family: Geneva;
+    margin: 0;
+    /* overflow: hidden; */
+  }
+  
+  h1 {
+    padding-top: 10px;
+    color: gray;
+    font-family: 'Brush Script MT', cursive;
+    text-align: center;
+    font-size: 40px;
+  }
+
+    p {
+        color:lightcyan;
+        font-family: Geneva;
+        padding-left: 30px;
+        padding-right: 30px;
+        font-size: small;
+        line-height: 0.8cm;
+    }
+
+    .img{
+        width:100%;
+    }
+  
+  .rain {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+  }
+  
+  .drop {
+    position: absolute;
+    bottom: 100%;
+    width: 15px;
+    height: 120px;
+    pointer-events: none;
+    animation: drop 0.5s linear infinite;
+  }
+  
+  @keyframes drop {
+    0% { transform: translateY(0vh); }
+    75% { transform: translateY(90vh); }
+    100% { transform: translateY(90vh); }
+  }
+  
+  .stem {
+    width: 1px;
+    height: 60%;
+    margin-left: 7px;
+    background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0.25));
+    animation: stem 0.5s linear infinite;
+  }
+  
+  .splat {
+    width: 15px;
+    height: 10px;
+    border-top: 2px dotted rgba(255,255,255,0.5);
+    border-radius: 50%;
+    opacity: 1;
+    transform: scale(0);
+    animation: splat 0.5s linear infinite;
+    display: block; /* Always show splat */
+  }
+  
+  @keyframes splat {
+    0% { opacity: 1; transform: scale(0); }
+    80% { opacity: 1; transform: scale(0); }
+    90% { opacity: 0.5; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.5); }
+  }
+
+  /* flip card */
+
+  
+  .flip-wrapper {
+    display: flex;
+    justify-content: center;
+    margin: 50px;
+    gap: 40px;
+    perspective: 1000px;
+  }
+  
+  .flip-card {
+    width: 700px;
+    height: 400px;
+  }
+  
+  .flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+  }
+  
+  .flip-card:hover .flip-inner {
+    transform: rotateY(180deg);
+  }
+  
+  .flip-front, .flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  .flip-front img, .flip-back img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .flip-back {
+    transform: rotateY(180deg);
+  }
+  
