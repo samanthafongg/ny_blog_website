@@ -9,6 +9,65 @@
 
 <h1> ⋇⋆✦⋆⋇The Brunchie Munchies⋇⋆✦⋆⋇ </h1>
 <body>
-    
+
+    <p> Which teacup is your favorite? </p>
+
+    <div class="dock">
+    <div class="icon" style="--index: 0;"><img src="images/cup1.png" alt="Cup 1"></div>
+    <div class="icon" style="--index: 1;"><img src="images/cup2.png" alt="Cup 2"></div>
+    <div class="icon" style="--index: 2;"><img src="images/cup3.png" alt="Cup 3"></div>
+    <div class="icon" style="--index: 3;"><img src="images/cup4.png" alt="Cup 4"></div>
+    <div class="icon" style="--index: 4;"><img src="images/cup5.png" alt="Cup 5"></div>
+      </div>
+
+    <p class="smalltext"> Click the silver stars to learn more about my day 3 travels!</p>
+    <div class="map-container">
+        <img src="images/map.png" alt="NY Map" class="map">
+    </div>
+
+    <img src="images/silverstar.png" alt="Star" class="star star1">
+    <img src="images/silverstar.png" alt="Star" class="star star2">
+    <img src="images/silverstar.png" alt="Star" class="star star3">
+
+
+
+
+<script>
+const dock = document.querySelector('.dock');
+const icons = dock.querySelectorAll('.icon');
+
+dock.addEventListener('mousemove', (e) => {
+  const rect = dock.getBoundingClientRect();
+  const centerX = e.clientX - rect.left;
+
+  icons.forEach((icon) => {
+    const iconRect = icon.getBoundingClientRect();
+    const iconCenter = iconRect.left + iconRect.width / 2 - rect.left;
+    const distance = Math.abs(centerX - iconCenter);
+    const maxDistance = 100; // tweak this
+    const scale = Math.max(1, 1.8 - distance / maxDistance);
+    icon.style.transform = `scale(${scale})`;
+  });
+});
+
+dock.addEventListener('mouseleave', () => {
+  icons.forEach((icon) => {
+    icon.style.transform = `scale(1)`;
+  });
+});
+</script>
+
+<script>
+    document.querySelectorAll(".reveal-btn").forEach(button=> {
+        button.addEventListener('click', () => {
+            const textBox=button.nextElementSibling;
+            textBox.classList.toggle('active')
+        });
+    });
+</script>
+
+
 </body>
+
+
 </html>

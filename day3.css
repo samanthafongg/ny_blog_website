@@ -19,3 +19,121 @@ p {
     padding-left:15px;
     /* align-items: center; */
 }
+
+.map-container{
+    position:relative;
+    display:flex;
+    justify-content: center;
+}
+
+.smalltext{
+    font-size: 12px;
+    font-family:'Courier New', Courier, monospace;
+    padding:none;
+}
+
+.star{
+    position: absolute;
+    width: 10%; 
+    height: auto;
+}
+
+.map{
+    width:80%;
+    height:auto;
+}
+
+.star1{
+    width:5%;
+    top:50%;
+    left:49%;
+}
+
+.star2{
+    width:5%;
+    top:80%;
+    left:33%;
+}
+
+.star3{
+    width:5%;
+    top:55%;
+    left:50%;
+}
+:root {
+	--lerp-0: 1;
+  --lerp-1: 0.5625;
+  --lerp-2: 0.25;
+  --lerp-3: 0.0625;
+  --lerp-4: 0;
+}
+
+*,
+*:after,
+*:before {
+	box-sizing: border-box;
+}
+:root {
+    --scale-factor: 4;
+    --distance-limit: 4;
+  }
+  
+  .dock {
+    display: flex;
+    align-items: flex-end;
+    gap: 20px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    /* padding: 30px; */
+  }
+  
+  .icon {
+    width: 80px;
+    height: 80px;
+    /* background: linear-gradient(to top right, violet, purple); */
+    border-radius: 12px;
+    transition: transform 0.2s;
+    transform-origin: bottom center;
+  }
+  
+  /* Base scale */
+  .icon {
+    --scale: 1;
+    transform: scale(var(--scale));
+  }
+
+  .icon img{
+    width: 100%;
+    height:100%;
+    object-fit: contain;
+    pointer-events: none;
+  }
+  
+  /* Handle hover + neighbors */
+  .dock:hover .icon {
+    --hovered: 0;
+  }
+  
+  .icon:hover {
+    --hovered: 1;
+  }
+  
+  /* Adjacent scaling: use JavaScript OR define lerp via selectors */
+  .icon:hover {
+    transform: scale(calc(var(--scale-factor)));
+  }
+  
+  .icon:hover + .icon,
+  .icon:has(+ .icon:hover),
+  .icon:hover + .icon + .icon,
+  .icon:has(+ .icon + .icon:hover) {
+    transform: scale(1.4);
+  }
+  
+  .icon:hover + .icon + .icon,
+  .icon:has(+ .icon + .icon:hover),
+  .icon:hover + .icon + .icon + .icon,
+  .icon:has(+ .icon + .icon + .icon:hover) {
+    transform: scale(1.2);
+  }
+  
