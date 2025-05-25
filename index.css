@@ -29,9 +29,9 @@ h1 {
     align-items: center;
     gap: 30px; /*space between elements */
     margin: 20px 0px;
-    border-color: red;
-    border-style: solid;
-    border-width: 2px;
+    /* border-color: red; */
+    /* border-style: solid;
+    border-width: 2px; */
 }
 
 .apple{
@@ -103,9 +103,9 @@ h1 {
     max-width: 800px;    /* Optional: limit maximum width */
     margin: 20px auto;   /* Optional: center the grid */
     aspect-ratio: 1/1;    /* Makes the container square */
-    border-color: green;
+    /* border-color: green;
     border-style: solid;
-    border-width: 2px;
+    border-width: 2px; */
 }
 
 .grid-item {
