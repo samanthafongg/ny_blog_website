@@ -35,7 +35,7 @@ h1 {
 }
 
 .apple{
-    width: 100px;
+    width: 50px;
     height: auto;
     animation: dance 1.5s infinite;
 }
@@ -154,7 +154,7 @@ h1 {
 @media (max-width: 600px) {
     .grid-container {
       grid-template-columns: 1fr;   /* Changes to 1 column on smaller screens */
-      grid-template-rows: repeat(4, 1fr); /* Creates 4 rows instead */
+      grid-template-rows: repeat(4, minmax(150px, auto)); /* Each row is at least 150px tall */
     }
   }
 
