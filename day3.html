@@ -20,17 +20,102 @@
     <div class="icon" style="--index: 4;"><img src="images/cup5.png" alt="Cup 5"></div>
       </div>
 
-    <p class="smalltext"> Click the silver stars to learn more about my day 3 travels!</p>
+    <p class="smalltext"> Click the silver stars to learn more about my day 3 travels! Technically i went to sake bar the day before but i included it here since it was in the area!</p>
     <div class="map-container">
         <img src="images/map.png" alt="NY Map" class="map">
     </div>
 
-    <img src="images/silverstar.png" alt="Star" class="star star1">
-    <img src="images/silverstar.png" alt="Star" class="star star2">
-    <img src="images/silverstar.png" alt="Star" class="star star3">
+    <a href="https://www.yelp.com/biz/hi-collar-new-york-2" target="_blank" class="button"> <img src="images/silverstar.png" alt="Star" class="star star1"> </a>
+    <a href="https://www.yelp.com/biz/duo-cafe-new-york" target="_blank" class="button"> <img src="images/silverstar.png" alt="Star" class="star star2"> </a>
+    <a href="https://www.yelp.com/biz/sake-bar-decibel-new-york" target="_blank" class="button"> <img src="images/silverstar.png" alt="Star" class="star star3"> </a>
+
+    <p> View a fun slideshow below!!</p>
+
+    <!-- Slideshow container -->
+<div class="slideshow-container">
+
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 10</div>
+    <img src="/images/hicollar.png" style="width:100%">
+    <div class="text">Hi-Collar - Omurice and Tangerine Tea</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"> 2 / 10</div>
+    <img src="/images/duotea.JPG" style="width:100%">
+    <div class="text">Duo Cafe - Oolong Cha and Pumpkin Cake</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"> 3 / 10</div>
+    <img src="/images/teaspread.jpg" style="width:100%">
+    <div class="text">Duo Cafe - Tea Tray</div>
+  </div>
 
 
+  <div class="mySlides fade">
+    <div class="numbertext"> 4 / 10</div>
+    <img src="/images/duoout.JPG" style="width:100%">
+    <div class="text">East Village Neighborhood</div>
+  </div>
 
+  <div class="mySlides fade">
+    <div class="numbertext"> 5 / 10</div>
+    <img src="/images/roosevelt.JPG" style="width:100%">
+    <div class="text"> Roosevelt Island View of the city</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"> 6 / 10</div>
+    <img src="/images/kalguksu.jpg" style="width:100%">
+    <div class="text"> Her Name is Han - Yuzu Chicken Kalguksu</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"> 7 / 10</div>
+    <img src="/images/marinated.jpg" style="width:100%">
+    <div class="text"> Her Name is Han - Marinated Crab</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"> 8 / 10</div>
+    <img src="/images/bar.jpg" style="width:100%">
+    <div class="text">Decibel Sake Bar NYC</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"> 9 / 10</div>
+    <img src="/images/timessquare.JPG" style="width:100%">
+    <div class="text">Times Square NYC</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"> 10 / 10</div>
+    <img src="/images/comedy.jpg" style="width:100%">
+    <div class="text">Comedy Cellar East Village</div>
+  </div>
+
+  <!-- Next and previous buttons -->
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- The dots/circles -->
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span>
+  <span class="dot" onclick="currentSlide(5)"></span>
+  <span class="dot" onclick="currentSlide(6)"></span>
+  <span class="dot" onclick="currentSlide(7)"></span>
+  <span class="dot" onclick="currentSlide(8)"></span>
+  <span class="dot" onclick="currentSlide(9)"></span>
+  <span class="dot" onclick="currentSlide(10)"></span>
+
+</div>
 
 <script>
 const dock = document.querySelector('.dock');
@@ -58,12 +143,34 @@ dock.addEventListener('mouseleave', () => {
 </script>
 
 <script>
-    document.querySelectorAll(".reveal-btn").forEach(button=> {
-        button.addEventListener('click', () => {
-            const textBox=button.nextElementSibling;
-            textBox.classList.toggle('active')
-        });
-    });
+  let slideIndex = 1;
+showSlides(slideIndex);
+
+// Next/previous controls
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+// Thumbnail image controls
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+}
 </script>
 
 
