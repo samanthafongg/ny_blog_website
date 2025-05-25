@@ -167,7 +167,7 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 .slide-wrapper .text-box {
     color: #CCCCFF;
     display: none; /* hide by default */
-    /* margin-top: 10px; */
+    margin-top: 5px;
     /* margin-left: 10px; */
     font-family:'Courier New', Courier, monospace;
     background-color: #164924;
