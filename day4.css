@@ -1,0 +1,21 @@
+body { 
+    background-color: lavender;
+    font-family:Geneva;
+}
+
+h1 {
+    padding-top: 10px;
+    color: purple;
+    font-family: 'Brush Script MT', cursive;
+    text-align: center;
+    font-size: 40px;
+}
+
+p {
+    color:purple;
+    font-family: cursive;
+    font-size: 20px;
+    line-height: 0.8cm;
+    padding-left:15px;
+    /* align-items: center; */
+}
