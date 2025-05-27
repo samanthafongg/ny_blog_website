@@ -17,14 +17,15 @@ p {
     font-size: 20px;
     line-height: 0.8cm;
     padding-left:15px;
-    /* align-items: center; */
 }
 
 .map-container{
     position:relative;
-    display:flex;
-    justify-content: center;
-}
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    max-width: 800px; 
+    margin: auto;
+  }
 
 .smalltext{
     font-size: 16px;
@@ -34,32 +35,23 @@ p {
 
 .star{
     position: absolute;
-    width: 10%; 
+    width:4%; 
     height: auto;
 }
 
 .map{
-    width:80%;
-    height:auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width:100%;
+    height:100%;
+    object-fit: contain;
 }
 
-.star1{
-    width:5%;
-    top:57%;
-    left:49%;
-}
+.star1 { top: 24%; left: 50%; }
+.star2 { top: 76%; left: 29%; }
+.star3 { top: 34%; left: 51%; }
 
-.star2{
-    width:5%;
-    top:87%;
-    left:33%;
-}
-
-.star3{
-    width:5%;
-    top:62%;
-    left:50%;
-}
 :root {
 	--lerp-0: 1;
   --lerp-1: 0.5625;
@@ -226,78 +218,26 @@ p {
   to {opacity: 1}
 }
 
+/* responsive design */
 
-/* ============ Mobile Screens (Up to 600px) ============ */
+
 @media (max-width: 600px) {
-  h1 {
-    font-size: 28px;
-  }
-
-  p {
-    font-size: 16px;
-    line-height: 1.4;
-    padding-left: 10px;
-  }
-
   .map {
-    width: 95%;
+    width: 100%; /* don't override this */
   }
 
   .star {
-    width: 8%;
-  }
-
-  .dock {
-    flex-wrap: wrap;
-    gap: 12px;
-    justify-content: center;
-  }
-
-  .icon {
-    width: 50px;
-    height: 50px;
-  }
-
-  .slide-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .slide-item {
-    width: 90%;
-    margin: 10px 0;
-  }
-
-  .slideshow-container {
-    max-width: 100%;
+    width: 5%; /* keep same width to maintain positioning consistency */
   }
 }
 
-/* ============ Tablet Screens (601px - 900px) ============ */
+
 @media (min-width: 601px) and (max-width: 900px) {
-  h1 {
-    font-size: 34px;
-  }
-
   .map {
-    width: 90%;
+    width: 100%;
   }
 
   .star {
-    width: 6%;
-  }
-
-  .dock {
-    gap: 18px;
-  }
-
-  .slide-item {
-    width: 45%;
-  }
-
-  .icon {
-    width: 70px;
-    height: 70px;
+    width: 5%;
   }
 }
-
