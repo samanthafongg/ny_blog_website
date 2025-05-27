@@ -102,7 +102,7 @@ h1 {
     width: 90%;  /* Container takes full width */
     max-width: 800px;    /* Optional: limit maximum width */
     margin: 20px auto;   /* Optional: center the grid */
-    aspect-ratio: 1/1;    /* Makes the container square */
+    /* aspect-ratio: 1/1;    Makes the container square */
     /* border-color: green;
     border-style: solid;
     border-width: 2px; */
@@ -114,9 +114,11 @@ h1 {
     width: 100%;
     height: 100%; /* aspect ratio set above requires items to be square */
     border-radius: 10px;
+    padding-bottom: 100%;
 }
 
 .grid-item img {
+    position: absolute;
     opacity: 1;
     display:block;
     width: 100%;
@@ -155,6 +157,7 @@ h1 {
     .grid-container {
       grid-template-columns: 1fr;   /* Changes to 1 column on smaller screens */
       grid-template-rows: repeat(4, minmax(250px, auto)); /* Each row is at least 150px tall */
+      aspect-ratio: auto; /* Allow natural height */
     }
     .button-container {
         grid-template-columns: 1fr; /* One column */
