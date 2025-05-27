@@ -165,8 +165,11 @@ h1 {
         gap: 10px;
       }
     .spaced-link{
+        /* top and bottom margin = 5px, left and right = 0*/
+        /* vertical spacing between each stacked button */
         margin: 5px 0;
-        width: 120px;
+        /* sets constant width for button */
+        width: 100px;
     }
   }
 
