@@ -81,7 +81,7 @@ a#rotator img {
 /* slide calculated relative to nearest positioned ancestor, the closest parents with a position value that its not "static" */
 /* if no parent has position:relative, then the child element will be positioned relative to the entire body */
 .slide {
-    position: absolute;
+    /* position: absolute; takes slides out of document flow so slide-wrapper is essentially empty*/
     width: 10%; 
     height: auto;
 
@@ -151,8 +151,7 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 
   /* Button styles */
 .slide-wrapper .reveal-btn {
-    margin-top: 200px;
-    /* margin-left: 10px; */
+    margin-top: 10px;
     padding: 10px 14px;
     font-size: 16px;
     font-family:'Courier New', Courier, monospace;
@@ -161,6 +160,9 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     border: none;
     border-radius: 8px;
     cursor: pointer; /* hand on hover */
+    text-align: center;
+    max-width: 100%;
+    word-wrap: break-word;
   } 
 
   /* the hidden info box that appears after the info button is clicked */
@@ -225,14 +227,33 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     width: 10%;
 }
 
-/* @media (max-width: 768px) {
-    .reveal-btn {
-      font-size: 0.9rem;
-      padding: 0.4rem 0.8rem;
+
+/* adapt on smaller screens */ 
+@media (max-width: 768px) {
+    .slide-wrapper {
+      width: 40%; /* Make the wrapper bigger so contents don't squish */
     }
   
-    .text-box {
-      font-size: 0.9rem;
+    .slide-wrapper .reveal-btn,
+    .slide-wrapper .text-box {
+      font-size: 14px;
+      padding: 8px 10px;
+      width: 100%; /* Ensure they don't overflow */
+      text-align: center;
+    }
+  
+    
+    .slide-wrapper img.slide {
+      width: 100%;
     }
   }
-   */
+
+  /* extra smalls creens */
+
+  @media (max-width: 480px) {
+    .slide-wrapper {
+      width: 70%;
+    }
+  }
+  
+  
