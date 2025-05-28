@@ -113,7 +113,7 @@ left: 8%;
 
 /* positions slide1 wrapper along the roadmap image */
 .slide2-wrapper {
-    top: 50%;
+    top: 35%;
     left: 28%;
     }
 
@@ -148,12 +148,12 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 .slide-wrapper .reveal-btn {
     margin-top: 10px;
     padding: 10px 14px;
-    font-size: 16px;
+    font-size: 14px;
     font-family:'Courier New', Courier, monospace;
     background-color: purple;
     color: white;
     border: none;
-    border-radius: 8px;
+    border-radius: 10px;
     cursor: pointer; /* hand on hover */
     text-align: center;
     max-width: 100%;
@@ -165,13 +165,14 @@ box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     color: #CCCCFF;
     display: none; /* hide by default */
     margin-top: 5px;
-    /* margin-left: 10px; */
     font-family:'Courier New', Courier, monospace;
     background-color: #164924;
     color: white;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 16px;
+    padding: 12px;
+    border-radius: 10px;
+    font-size: 12px;
+    word-wrap: break-word;
+
 
   }
   
